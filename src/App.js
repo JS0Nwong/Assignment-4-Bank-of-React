@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import axios from "axios"
+import axios from "axios";
 
 // Import other components
 import Home from './components/Home';
@@ -75,21 +75,18 @@ class App extends Component {
     credits = credits.data;
     debits = debits.data;
 
-    const creditsSum = 0;
-    const debitsSum = 0;
+    let creditsSum = 0;
+    let debitsSum = 0;
 
-    // credits.forEach((credit) => {
-    //   creditsSum += credit.amount;
-    // })
+    credits.forEach((credit) => {
+      creditsSum += credit.amount;
+    })
 
-    // debits.forEach((debit) => {
-    //   debitsSum += debit.amount;
-    // })
+    debits.forEach((debit) => {
+      debitsSum += debit.amount;
+    })
 
     let accountBalance = creditsSum - debitsSum;
-
-    console.log(credits);
-    console.log(debits);
 
     this.setState({debits, credits, accountBalance});
 
