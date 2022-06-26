@@ -22,7 +22,7 @@ class Home extends Component {
                 <Link to = "/login">Login</Link>
                 <Link to = "/credits">Credits</Link>
                 <Link to = "/debits">Debits</Link>
-            <AccountBalance accountBalance = {this.props.accountBalance}/>
+                <AccountBalance accountBalance = {this.props.accountBalance}/>
         </Wrapper>
     );
   }
