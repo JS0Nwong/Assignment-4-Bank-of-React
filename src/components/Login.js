@@ -1,61 +1,69 @@
-
-import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 
 class LogIn extends Component {
-  constructor () {  // Create and initialize state
-    super()
+  constructor() {
+    // Create and initialize state
+    super();
     this.state = {
       user: {
-        userName: '',
-        password: ''
+        userName: "",
+        password: "",
       },
-      redirect: false
-    }
+      redirect: false,
+    };
   }
 
   // When the user name input is changed, capture the input and update the state (user.userName)
   handleChange = (e) => {
-    const updatedUser = {...this.state.user}
-    const inputField = e.target.name
-    const inputValue = e.target.value
-    updatedUser[inputField] = inputValue
+    const updatedUser = { ...this.state.user };
+    const inputField = e.target.name;
+    const inputValue = e.target.value;
+    updatedUser[inputField] = inputValue;
 
-    this.setState({user: updatedUser})
-  }
+    this.setState({ user: updatedUser });
+  };
 
   // When user clicked "Log In" button, store user data and then redirect to "User Profile" page
   handleSubmit = (e) => {
-    e.preventDefault()
-    this.props.mockLogIn(this.state.user)
-    this.setState({redirect: true})
-  }
-  
-  render () {
+    e.preventDefault();
+    this.props.mockLogIn(this.state.user);
+    this.setState({ redirect: true });
+  };
+
+  render() {
     // Redirect to "User Profile" page when "Log In" button is clicked
-    if (this.state.redirect) {  
-      return (<Redirect to="/userProfile"/>)
+    if (this.state.redirect) {
+      return <Redirect to="/userProfile" />;
     }
 
     // Render the login form (and call "handleSubmit" method when "Log In" button is clicked to submit form)
     return (
-      <div>
+      <div className="flex-center-column-aligned">
         <h1>Login</h1>
-        
-        <form onSubmit={this.handleSubmit}>
+
+        <form
+          className="flex-center-column-aligned"
+          onSubmit={this.handleSubmit}
+        >
           <div>
-            <label htmlFor="userName">User Name</label>
-            <input type="text" name="userName" onChange={this.handleChange} value={this.state.user.userName} />
+            <label htmlFor="userName">User Name: </label>
+            <input
+              type="text"
+              name="userName"
+              onChange={this.handleChange}
+              value={this.state.user.userName}
+            />
           </div>
           <div>
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">Password: </label>
             <input type="password" name="password" />
           </div>
           <button>Log In</button>
-        </form>                  
+        </form>
       </div>
-    )
+    );
   }
 }
 
-export default LogIn
+export default LogIn;
