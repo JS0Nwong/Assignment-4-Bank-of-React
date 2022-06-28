@@ -28,18 +28,30 @@ class Debits extends Component {
         })
     }
 
+    handleSubmit(event){
+        event.preventDefault();
+    }
+
     render() {
         return (
             <div>
                 <h1 className='heading'>Debits</h1>
-                <h5><AccountBalance accountBalance = {this.props.accountBalance}/></h5>
+                <h5><AccountBalance accountBalance = {this.props.accountBalance.toFixed(2)}/></h5>
                 <div className='table-heading'>
                     <h3>Amount</h3>
                     <h3>Description</h3>
                     <h3>Date</h3>
                 </div>
                 {this.displayDebits()}
-                
+                <form onSubmit={this.handleSubmit}>
+                    <label>
+                    Description:
+                    <input type="text" value={this.state.debit.description} onChange={this.handleChange} />
+                    Amount:
+                    <input type="number" value={this.state.debit.amount} onChange={this.handleChange} />
+                    </label>
+                    <input type="submit" value="Submit" />
+                </form>
             </div>
         );
     }
