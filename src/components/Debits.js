@@ -50,7 +50,7 @@ class Debits extends Component {
                 const values = Object.values(obj);
                 return (
                   <tr key={values.at(0)} className="m-2">
-                    <TableData>{values.at(2)}</TableData>
+                    <TableData>{"$" + values.at(2)}</TableData>
                     <TableData>{values.at(1)}</TableData>
                     <TableData>{values.at(3).split("T").at(0)}</TableData>
                   </tr>
