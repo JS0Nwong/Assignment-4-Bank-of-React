@@ -1,27 +1,22 @@
-*
-{
+* {
   margin: 0;
   padding: 0;
 }
-body
-{
 
-}
-.heading
-{
-  opacity: .3;
-}
-.list-item
-{
-  background-color: red;
+.list-item {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   text-align: center;
 }
-.table-heading
-{
+.table-heading {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.flex-center-column-aligned {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
