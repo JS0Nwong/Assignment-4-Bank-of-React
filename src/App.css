@@ -1,6 +1,16 @@
+:root
+{
+  --main-color: #F8F9FA;
+  --secondary-color: #E9ECEF;
+  --tertiary-color: #DEE2E6;
+}
 * {
   margin: 0;
   padding: 0;
+}
+body
+{
+  background-color: var(--secondary-color);
 }
 
 .list-item {
@@ -14,9 +24,69 @@
   flex-direction: row;
   justify-content: space-around;
 }
-
-.flex-center-column-aligned {
+.navbar
+{
+  background-color: var(--main-color);
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  justify-content: space-evenly;
+}
+.header-container
+{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 2em;
+}
+.nav
+{
+  display: flex;
+  flex-direction: column;
+}
+.button
+{
+  background-color: #f4f4f4;
+  border: 1px solid black;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.link
+{
+  text-decoration: none;
+  color: #000000;
+}
+.link:hover
+{
+  text-decoration: none;
+  color: #000000;
+}
+.row
+{
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+.col-md-10
+{
+  background-color: var(--main-color);
+  border-radius: 50px;
+  max-width: 80%;
+  margin: 28px;
+}
+.scroll::-webkit-scrollbar
+{
+  background-color: transparent;
+  width: 7px;
+}
+.scroll::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  background-color: var(--tertiary-color);
 }
