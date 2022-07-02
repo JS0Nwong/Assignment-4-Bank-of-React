@@ -28,15 +28,15 @@ class App extends Component {
     let newCredits = [...this.state.credits];
 
     let credit = {
-      amount: e.amount,
-      date: e.date,
-      description: e.description,
       id: e.id,
+      description: e.description,
+      amount: e.amount,
+      date: e.date
     };
 
     newCredits.push(credit);
 
-    let total = Number(this.state.accountBalance) + Number(e.amount);
+    let total = (Number(this.state.accountBalance) + Number(e.amount)).toFixed(2);
 
     this.setState({ credits: newCredits });
     this.setState({ accountBalance: total });
@@ -46,15 +46,15 @@ class App extends Component {
     let newDebits = [...this.state.debits];
 
     let debit = {
-      amount: e.amount,
-      date: e.date,
-      description: e.description,
       id: e.id,
+      description: e.description,
+      amount: e.amount,
+      date: e.date
     };
 
     newDebits.push(debit);
 
-    let total = Number(this.state.accountBalance) - Number(e.amount);
+    let total = (Number(this.state.accountBalance) - Number(e.amount)).toFixed(2);
 
     this.setState({ debits: newDebits });
     this.setState({ accountBalance: total });

@@ -29,6 +29,23 @@ class Credits extends Component {
     });
   };
 
+  handleChange = (event) => {
+    const tempCredit = { ...this.state.credit };
+    if(event.target.name === "amount"){
+      tempCredit.amount = event.target.value;
+    }
+    if(event.target.name === "description"){
+      tempCredit.description = event.target.value;
+    }
+    this.setState({ credit: tempCredit });
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.state.credit.date = new Date().toISOString();
+    this.props.addCredit(this.state.credit);
+  }
+
   render() {
     return (
       <div className="flex-center-column-aligned">
@@ -59,6 +76,15 @@ class Credits extends Component {
             </tbody>
           </table>
         </TableContainer>
+        <form onSubmit={this.handleSubmit}>
+            <label>
+            Description:
+            <input type="text" name="description" value={this.state.description} onChange={this.handleChange} required/>
+            Amount:
+            <input type="number" step=".01" name="amount" value={this.state.amount} onChange={this.handleChange} required/>
+            </label>
+            <input type="submit" value="Submit" />
+        </form>
       </div>
     );
   }
