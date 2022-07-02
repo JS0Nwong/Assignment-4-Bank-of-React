@@ -17,6 +17,23 @@ class Debits extends Component {
     };
   }
 
+  handleChange = (event) => {
+    const tempDebit = { ...this.state.debit };
+    if(event.target.name === "amount"){
+      tempDebit.amount = event.target.value;
+    }
+    if(event.target.name === "description"){
+      tempDebit.description = event.target.value;
+    }
+    this.setState({ debit: tempDebit });
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.state.debit.date = new Date().toISOString();
+    this.props.addDebit(this.state.debit);
+  }
+
   render() {
     return (
       <div className="container-fluid">
@@ -62,6 +79,15 @@ class Debits extends Component {
               </tbody>
             </table>
           </TableContainer>
+          <form onSubmit={this.handleSubmit}>
+            <label>
+            Description:
+            <input type="text" name="description" value={this.state.description} onChange={this.handleChange} required/>
+            Amount:
+            <input type="number" step=".01" name="amount" value={this.state.amount} onChange={this.handleChange} required/>
+            </label>
+            <input type="submit" value="Submit" />
+          </form>
             </div>
           </div>
       </div>
