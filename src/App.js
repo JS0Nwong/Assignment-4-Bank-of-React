@@ -8,6 +8,7 @@ import UserProfile from "./components/UserProfile";
 import LogIn from "./components/Login";
 import Credits from "./components/Credits";
 import Debits from "./components/Debits";
+import { sortByDate } from "./helpers/utils";
 
 class App extends Component {
   constructor() {
@@ -31,12 +32,14 @@ class App extends Component {
       id: e.id,
       description: e.description,
       amount: e.amount,
-      date: e.date
+      date: e.date,
     };
 
     newCredits.push(credit);
 
-    let total = (Number(this.state.accountBalance) + Number(e.amount)).toFixed(2);
+    let total = (Number(this.state.accountBalance) + Number(e.amount)).toFixed(
+      2
+    );
 
     this.setState({ credits: newCredits });
     this.setState({ accountBalance: total });
@@ -49,12 +52,14 @@ class App extends Component {
       id: e.id,
       description: e.description,
       amount: e.amount,
-      date: e.date
+      date: e.date,
     };
 
     newDebits.push(debit);
 
-    let total = (Number(this.state.accountBalance) - Number(e.amount)).toFixed(2);
+    let total = (Number(this.state.accountBalance) - Number(e.amount)).toFixed(
+      2
+    );
 
     this.setState({ debits: newDebits });
     this.setState({ accountBalance: total });
@@ -87,6 +92,9 @@ class App extends Component {
     });
 
     let accountBalance = (creditsSum - debitsSum).toFixed(2);
+
+    sortByDate(debits);
+    sortByDate(credits);
 
     this.setState({ debits, credits, accountBalance });
   }
