@@ -46,7 +46,6 @@ class Debits extends Component {
                     <button className = "button"><Link className = "link" to="/credits">Credits</Link></button>
                     <button className = "button"><Link className = "link" to="/userprofile">User Profile</Link></button>
                 </div>
-                <button className = "button">Add Debit</button>
         </div>
 
         <div className = "col-md-10">
@@ -79,15 +78,17 @@ class Debits extends Component {
               </tbody>
             </table>
           </TableContainer>
-          <form onSubmit={this.handleSubmit}>
-            <label>
-            Description:
-            <input type="text" name="description" value={this.state.description} onChange={this.handleChange} required/>
-            Amount:
-            <input type="number" step=".01" name="amount" value={this.state.amount} onChange={this.handleChange} required/>
-            </label>
-            <input type="submit" value="Submit" />
-          </form>
+          <div class="submitform">
+            <form onSubmit={this.handleSubmit}>
+              <label>
+              Description:
+              <input type="text" name="description" value={this.state.description} onChange={this.handleChange} required/>&nbsp;&nbsp;
+              Amount:
+              <input type="number" step=".01" name="amount" value={this.state.amount} onChange={this.handleChange} required/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </label>
+              <input type="submit" value="Submit" />
+            </form>
+          </div>
             </div>
           </div>
       </div>

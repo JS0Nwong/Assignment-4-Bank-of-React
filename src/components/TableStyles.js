@@ -6,6 +6,7 @@ const TableContainer = styled.div`
   margin: 2em;
   display: flex;
   flex-direction: column;
+  border: 1px solid black;
 `;
 
 const TableHeadData = styled.th`

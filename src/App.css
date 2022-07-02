@@ -73,13 +73,13 @@ body
   align-items: center;
   justify-content: space-between;
 }
-.col-md-10
+/* .col-md-10
 {
   background-color: var(--main-color);
   border-radius: 50px;
   max-width: 80%;
   margin: 28px;
-}
+} */
 .scroll::-webkit-scrollbar
 {
   background-color: transparent;
@@ -89,4 +89,11 @@ body
 {
   border-radius: 10px;
   background-color: var(--tertiary-color);
+}
+.submitform{
+  display: flex;
+  justify-content: center;
+}
+.navbar{
+  border-right: 1px solid black;
 }
