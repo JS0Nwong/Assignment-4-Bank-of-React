@@ -46,6 +46,7 @@ class Debits extends Component {
                     <button className = "button"><Link className = "link" to="/credits">Credits</Link></button>
                     <button className = "button"><Link className = "link" to="/userprofile">User Profile</Link></button>
                 </div>
+                <button className = "button">Add Debit</button>
         </div>
 
         <div className = "col-md-10">
