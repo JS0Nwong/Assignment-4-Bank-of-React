@@ -42,6 +42,7 @@ class Credits extends Component {
   }
 
   handleSubmit = (event) => {
+    event.target.reset();
     event.preventDefault();
     this.state.credit.date = new Date().toISOString();
     this.props.addCredit(this.state.credit);
