@@ -31,11 +31,15 @@ class Debits extends Component {
   handleSubmit = (event) => {
     event.target.reset();
     event.preventDefault();
-    this.setState((prevState) => ({
-      ...prevState,
-      date: new Date().toISOString(),
-    }));
-    this.props.addDebit(this.state.debit);
+    this.setState(
+      (prevState) => ({
+        debit: {
+          ...prevState.debit,
+          date: new Date().toISOString(),
+        },
+      }),
+      () => this.props.addDebit(this.state.debit)
+    );
   };
 
   render() {
@@ -90,7 +94,7 @@ class Debits extends Component {
                 </tbody>
               </table>
             </TableContainer>
-            <div class="submitform">
+            <div className="submitform">
               <form onSubmit={this.handleSubmit}>
                 <label>
                   Description:
