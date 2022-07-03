@@ -31,7 +31,10 @@ class Debits extends Component {
   handleSubmit = (event) => {
     event.target.reset();
     event.preventDefault();
-    this.state.debit.date = new Date().toISOString();
+    this.setState((prevState) => ({
+      ...prevState,
+      date: new Date().toISOString(),
+    }));
     this.props.addDebit(this.state.debit);
   };
 
