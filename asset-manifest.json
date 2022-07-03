@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Assignment-4-Bank-of-React/static/css/main.f7f07c7f.css",
+    "main.js": "/Assignment-4-Bank-of-React/static/js/main.1efa84ad.js",
+    "index.html": "/Assignment-4-Bank-of-React/index.html",
+    "main.f7f07c7f.css.map": "/Assignment-4-Bank-of-React/static/css/main.f7f07c7f.css.map",
+    "main.1efa84ad.js.map": "/Assignment-4-Bank-of-React/static/js/main.1efa84ad.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f7f07c7f.css",
+    "static/js/main.1efa84ad.js"
+  ]
+}
