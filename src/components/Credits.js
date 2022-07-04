@@ -95,11 +95,14 @@ class Credits extends Component {
                 <tbody>
                   {this.props.credits.map((obj) => {
                     const values = Object.values(obj);
+                    const dateTime = values.at(3).split("T");
                     return (
                       <tr key={values.at(0)} className="m-2">
                         <TableData>{"$" + values.at(2)}</TableData>
                         <TableData>{values.at(1)}</TableData>
-                        <TableData>{values.at(3).split("T").at(0)}</TableData>
+                        <TableData>
+                          {dateTime.at(0) + " ─ " + dateTime.at(1).substr(0, 5)}
+                        </TableData>
                       </tr>
                     );
                   })}
