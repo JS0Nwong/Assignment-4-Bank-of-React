@@ -12,9 +12,7 @@ class Home extends Component {
       justify-content: space-evenly;
       height: 85vh;
     `;
-    const LandingImage = styled.div`
-      display: flex;
-    `;
+
     return (
       <Wrapper>
         <h1>Menu</h1>
